@@ -2,8 +2,781 @@
 * Third Party
 */
 @import "../../bower_components/normalize.css/normalize.css";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600');
+/* --------------------------------
 
-/*
-* Custom
-*/
+Custom
+
+-------------------------------- */
+@import 'partials/variables';
+// colors, fonts etc...
+@import 'partials/mixins';
+// custom mixins
+@import 'partials/layout';
+// responsive grid and media queries
 @import "partials/app";
+
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+html {
+  position: relative;
+  height: 100%;
+  min-width: 1200px;
+}
+
+body {
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  color: darken($color-1, 5);
+
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e4e5e9;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+
+  .logo {
+    padding: 16px 20px;
+  }
+  div {
+
+    line-height: 120%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+section {
+  clear: both;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+/* --------------------------------
+
+header-menu style
+
+-------------------------------- */
+
+.navbar {
+  background: $color-2;
+  display: block;
+  min-height: 50px;
+  padding-right: 20px;
+  a {
+    text-decoration: none;
+    color: $color-3;
+  }
+  .navbar-logo {
+    height: 50px;
+    float: left;
+    display: block;
+    background: darken($color-1, 20);
+    img {
+      padding: 15px 20px;
+    }
+  }
+
+  .navbar-brand {
+    position: relative;
+    float: left;
+    display: block;
+    height: 50px;
+    background-color: $color-4;
+    a {
+      line-height: 50px;
+      padding: 5px 20px;
+    }
+    .company-name {
+      font-size: 125%;
+      font-weight: 500;
+    }
+    .project-name {
+
+    }
+    ::after {
+      top: 0;
+      content: '';
+      right: -17px;
+      display: block;
+      position: absolute;
+      border-style: solid;
+      border-width: 25px 0 25px 17px;
+      border-color: transparent transparent transparent $color-4;
+    }
+  }
+  .navbar-left {
+    float: left;
+    .nav {
+      padding-top: 13px;
+      padding-left: 32px;
+    }
+    .nav > li {
+      list-style-type: none;
+      float: left;
+      display: block;
+      position: relative;
+      padding: 5px 10px;
+      margin-right: 2px;
+      line-height: 120%;
+      text-transform: uppercase;
+
+    }
+    li:hover, li:focus {
+      a {
+        color: darken($color-1, 20);
+      }
+      border-bottom: 3px solid darken($color-1, 20);
+      background: inherit;
+
+    }
+    li.active {
+      a {
+        color: $color-3;
+      }
+      border-bottom: 3px solid $color-3;
+    }
+
+  }
+  .navbar-right {
+    float: right;
+  }
+
+
+}
+/* --------------------------------
+
+dropdown style
+
+-------------------------------- */
+.dropdown {
+  padding-top: 10px;
+  cursor: pointer;
+  line-height: $input-height;
+  a:hover, a:focus, a:active {
+    color: darken($color-1, 20);
+  }
+  .dropdown-toggle {
+    span {
+      padding-right: 15px;
+    }
+
+  }
+  .dropdown-menu {
+    background-color: $color-4;
+    margin-top: 10px;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    min-width: 250px;
+    box-sizing: border-box;
+    &:before {
+      top: -7px;
+      content: '';
+      right: 20px;
+      display: block;
+      position: absolute;
+      border-style: solid;
+      border-width: 0 10px 7px 10px;
+      border-color: transparent transparent $color-4 transparent;
+    }
+    a:hover {
+      color: darken($color-1,20);
+    }
+    .user-info {
+      line-height: 120%;
+      color: $color-3;
+      padding: 20px;
+      border-bottom: 1px solid $color-2;
+      a {
+        color: $color-2;
+      }
+    }
+    .user-nav {
+      float: left;
+      width: 100%;
+      div {
+        float: left;
+        width: 33%;
+        text-align: center;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+/* --------------------------------
+
+create-categories style
+
+-------------------------------- */
+.categories {
+  width: 23%;
+  float: left;
+  height: calc(100vh - 70px);
+  background: $color-1;
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: darken($color-1, 20);
+  }
+  .categories-head {
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid $color-2;
+    .categories-head-title, .categories-head-button {
+      padding: $item-padding-M $item-padding-M*2;
+    }
+    .categories-head-title {
+      float: left;
+      line-height: $input-height;
+      color: $color-2;
+    }
+    .categories-head-button {
+      float: right;
+    }
+
+  }
+
+}
+
+/* --------------------------------
+
+clear
+
+-------------------------------- */
+.search-box {
+  padding-top: 10px;
+}
+
+.search-box, .tags-list-box {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.search-box:after, .tags-list-box:after, .tests-list-box:after {
+  clear: both;
+  box-sizing: border-box;
+}
+
+/* --------------------------------
+
+Tasks style
+
+-------------------------------- */
+.tasks {
+  height: calc(100vh - 100px);
+  width: 77%;
+  float: left;
+  div {
+    box-sizing: border-box;
+  }
+  > div {
+
+    width: 50%;
+    display: block;
+    float: left;
+
+  }
+  .tasks-view {
+    height: calc(100% - 60px);
+  }
+
+  .tasks-edit {
+    padding-left: $item-padding-M*2;
+    padding-right: $item-padding-M*2;
+    background-color: $color-blue-grey;
+    height: 100%;
+    padding-top: 7px;
+    .tasks-edit-title {
+      font-size: 130%;
+      line-height: $input-height;
+      font-weight: 500;
+    }
+  }
+  .tasks-edit-form {
+    .form-row {
+      width: 100%;
+      float: left;
+      line-height: $input-height;
+      .form-label {
+        width: 20%;
+        float: left;
+        /*text-align: right;*/
+        padding-right: 10px;
+        color: darken($color-grey, 50);
+      }
+      .form-content {
+        width: 80%;
+        float: left;
+      }
+      input {
+        line-height: 23px;
+        border: 1px solid #ccc;
+        border-radius: $border-radius;
+        width: 100%;
+      }
+      select {
+        padding: 3px 5px 2px 5px;
+        line-height: $input-height;
+        border: 1px solid #ccc;
+        color: $color-1;
+      }
+    }
+  }
+  .task-edit-desc {
+    margin-bottom: 10px;
+    .desc-title {
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: $input-height;
+    }
+    textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: $border-radius;
+    }
+  }
+  .task-edit-buttons {
+    button {
+      margin-right: 10px;
+    }
+    i {
+      padding-right: 5px;
+    }
+  }
+
+}
+
+/* --------------------------------
+
+Tags-list-box style
+
+-------------------------------- */
+.tags-list-box {
+  float: left;
+  width: 100%;
+
+}
+
+.tag {
+  margin-top: $item-padding-M;
+  display: inline-block;
+  padding: 0 5px 0 10px;
+  background-color: $color-grey;
+  border-radius: $border-radius;
+  line-height: 22px;
+  span {
+    color: darken($color-grey, 50);
+  }
+  a {
+    padding: 5px;
+    color: darken($color-grey, 40);
+  }
+  a:hover {
+    color: darken($color-grey, 70);
+    cursor: pointer;
+  }
+
+}
+
+.tag:hover {
+  background-color: darken($color-grey, 5);
+}
+
+.tags-count {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* --------------------------------
+
+Tests style
+
+-------------------------------- */
+.tests-list-box {
+  float: left;
+  width: 100%;
+  height: calc(100% - 70px);
+  overflow: auto;
+  .tests-item {
+    position: relative;
+    border-top: 1px solid $color-grey;
+    padding: 10px 20px;
+    line-height: 20px;
+    .tests-item-title {
+      a {
+        text-decoration: none;
+        color: $color-blue;
+      }
+      a:hover {
+        color: darken($color-high, 10);
+      }
+    }
+    .tests-item-category {
+      a {
+        text-decoration: none;
+        color: darken($color-2, 10);
+      }
+    }
+    .tests-item-tags .tag {
+      padding-right: 10px;
+      margin-top: 0;
+    }
+
+    .tests-item-actions {
+      display: none;
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      background-color: $color-fill;
+      a {
+        padding: 5px;
+        font-size: 110%;
+        color: darken($color-grey, 30);
+      }
+      a:hover {
+        color: darken($color-high, 10);
+      }
+    }
+  }
+  .tests-item.active {
+    background-color: $color-blue-grey;
+  }
+  .tests-item:hover {
+    background-color: $color-fill;
+    .tests-item-actions {
+      display: block;
+    }
+  }
+
+}
+
+.tests-list-box:last-child {
+  border-bottom: 1px solid $color-grey;
+}
+
+/* --------------------------------
+
+label style
+
+-------------------------------- */
+.item-label {
+  position: relative;
+  padding-left: 5px;
+  background-color: $color-label;
+  margin-right: 10px;
+  display: inline-block;
+  line-height: 18px;
+}
+
+.item-label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.item-label:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -6px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 9px 0 9px 7px;
+  border-color: transparent transparent transparent $color-label;
+}
+
+.priority-high:before {
+  background-color: $color-high;
+}
+
+.priority-normal:before {
+  background-color: $color-normal;
+}
+
+.priority-low:before {
+  background-color: $color-low;
+}
+
+/* --------------------------------
+
+btn style
+
+-------------------------------- */
+button {
+  border: none;
+  color: $color-1;
+  background-color: #999;
+  display: inline-block;
+  cursor: pointer;
+
+}
+
+.btn-main {
+  color: $color-3;
+  background-color: $color-2;
+  border-radius: $border-radius;
+  padding: 0 15px;
+  height: $input-height;
+
+}
+
+.btn-main:hover {
+  background-color: darken($color-2, 10);
+}
+
+.input-group-btn {
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+  display: block;
+  input[type=search] {
+    width: 60%;
+    height: $input-height;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: none;
+    line-height: 23px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+  .search-caret {
+    height: $input-height;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    margin-left: -5px;
+    padding: 0 $item-padding-M;
+  }
+  .btn-main {
+    margin-left: -3px;
+
+  }
+  .btn-search {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+}
+
+/* --------------------------------
+
+Accordion-menu style
+
+-------------------------------- */
+.cd-accordion-menu {
+  float: left;
+  width: 100%;
+  background: $color-1;
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    /* by default hide all sub menus */
+    display: none;
+  }
+
+  li {
+    user-select: none;
+    list-style-type: none;
+
+  }
+
+  input[type=checkbox] {
+    /*hide native checkbox */
+    position: absolute;
+    opacity: 0;
+  }
+
+  label, a {
+    position: relative;
+    display: block;
+
+    padding: $item-padding-S $item-padding-S $item-padding-S ($item-padding-S * 3);
+    background: $color-1;
+    /*box-shadow: inset 0 -1px tint($color-1, 5);*/
+    color: $color-3;
+
+    &:hover {
+      background: darken($color-1, 15);
+    }
+
+  }
+  label span {
+    color: $color-2;
+    padding-left: $item-padding-S;
+  }
+  label::before, label::after, a::after {
+    /* icons */
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  label {
+    cursor: pointer;
+    &::before /*, &::after*/
+    {
+      background-image: url(../img/cd-icons.svg);
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      /*arrow icon*/
+      left: $item-padding-M*2;
+      background-position: 0 0;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+  }
+
+  input[type=checkbox]:checked + label::before {
+    /* rotate arrow */
+    transform: translateY(-50%);
+  }
+
+  input[type=checkbox]:checked + label + ul,
+  input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+    /* use label:nth-of-type(n) to fix a bug on safari (<= 8.0.8) with multiple adjacent-sibling selectors*/
+    /* show children when item is checked */
+    display: block;
+  }
+
+  ul label,
+  ul a {
+    padding-left: ($item-padding-S * 4) + 10px;
+    background: darken($color-1, 7);
+    &:hover {
+      background: darken($color-1, 5);
+    }
+  }
+  ul label::before {
+    left: $item-padding-S * 2;
+  }
+
+  ul ul label,
+  ul ul a {
+    padding-left: ($item-padding-S * 5) + 10px;
+    background: darken($color-1, 10);
+
+  }
+
+  ul ul label::before {
+    left: $item-padding-S * 3;
+  }
+
+  ul ul ul label,
+  ul ul ul a {
+    padding-left: ($item-padding-S * 6) + 10px;
+    background: darken($color-1, 13);
+
+  }
+
+  ul ul ul label::before {
+    left: $item-padding-S * 4;
+  }
+
+  @include MQ(M) {
+    label, a {
+      padding: $item-padding-M $item-padding-M $item-padding-M ($item-padding-M * 4);
+    }
+
+    label::before {
+      left: $item-padding-M*2;
+    }
+
+    label::after {
+      left: ($item-padding-M * 3) + 5px;
+    }
+
+    ul label,
+    ul a {
+      padding-left: ($item-padding-M * 4) + 10px;
+    }
+
+    ul label::before {
+      left: $item-padding-M * 3;
+    }
+
+    ul label::after,
+    ul a::after {
+      left: ($item-padding-M * 4) + 5px;
+    }
+
+    ul ul label,
+    ul ul a {
+      padding-left: ($item-padding-M * 5) + 10px;
+    }
+
+    ul ul label::before {
+      left: $item-padding-M * 4;
+    }
+
+    /* ul ul label::after,
+     ul ul a::after {
+       left: ($item-padding-M * 4) + 5px;
+     }*/
+
+    ul ul ul label,
+    ul ul ul a {
+      padding-left: ($item-padding-M * 6) + 10px;
+    }
+
+    ul ul ul label::before {
+      left: $item-padding-M * 5;
+    }
+
+    /* ul ul ul label::after,
+     ul ul ul a::after {
+       left: ($item-padding-M * 5) + 5px;
+     }*/
+  }
+
+  &.animated label::before {
+    /* this class is used if you're using jquery to animate the accordion */
+    transition: transform .3s;
+  }
+}

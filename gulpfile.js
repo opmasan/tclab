@@ -98,7 +98,6 @@ gulp.task('build', [
     'html:build',
     'js:build',
     'style:build',
-    'fonts:build',
     'image:build'
 ]);
 
@@ -112,12 +111,12 @@ gulp.task('watch', function(){
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
     });
-    watch([path.watch.img], function(event, cb) {
+        watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
     });
-    watch([path.watch.fonts], function(event, cb) {
+/*    watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
-    });
+    });*/
 });
 
 //livereload
@@ -125,8 +124,8 @@ gulp.task('webserver', function () {
     browserSync(config);
 });
 
-/*gulp.task('clean', function (cb) {
+gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);
-});*/
+});
 
 gulp.task('default', ['build', 'webserver', 'watch']);

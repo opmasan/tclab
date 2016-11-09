@@ -1,41 +1,309 @@
 <!DOCTYPE html>
 <html>
-<head lang="ru">
+<head lang="en">
     <meta charset="UTF-8">
-    <title> 1 | TestCaseLab</title>
+    <title> Test Cases | TestCaseLab</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
 <section class="header">
-    <div class="header-logo"><img src="/src/img/Logo.png" alt=""></div>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-logo">
+                <a href="#"><img src="img/Logo.png" alt="TestCaseLab"></a>
+            </div>
+            <div class="navbar-brand">
+                <a class="company-name" href="#">Company Name</a>
+                <a class="project-name" href="#">TestCaseManagement</a>
+            </div>
+            <div class="navbar-left">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="#">Test Cases</a>
+                    </li>
+                    <li>
+                        <a href="#">Test Plans</a>
+                    </li>
+                    <li>
+                        <a href="#">Test Runs</a>
+                    </li>
+                    <li>
+                        <a href="#">Settings</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <div class="dropdown">
+                    <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span>Someone</span> <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <div class="user-info">
+                            <div>Someone</div>
+                            <div><a href="#">someone@gmail.com</a></div>
+                        </div>
+                        <div class="user-nav">
+                            <div><a href="#">Admin</a></div>
+                            <div><a href="#">Edit Profile</a></div>
+                            <div><a href="#">Log Out</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 </section>
 
 <section class="content">
-    <div class="col-sm-12">
-        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet consequatur corporis dignissimos dolorum
-            eum excepturi, id illo labore, nulla numquam quia quidem quod, saepe sequi suscipit tenetur voluptatem?
-            Quis?
-        </div>
-        <div>Dignissimos exercitationem fugit illo modi nulla odit officia possimus saepe totam veniam! Atque
-            dignissimos eius explicabo fugit itaque laboriosam mollitia nobis optio possimus praesentium quia
-            repellendus reprehenderit, temporibus veritatis voluptate.
-        </div>
-        <div>Beatae consequatur doloribus expedita facere. Amet corporis dolore doloribus eius eveniet explicabo hic
-            iure necessitatibus quis repellat voluptatibus, voluptatum! Delectus fugiat ipsum molestiae praesentium qui
-            repudiandae sit sunt unde veritatis.
-        </div>
-        <div>Ab alias aliquam culpa cumque cupiditate dolores earum exercitationem fuga fugit harum ipsa iure labore
-            laboriosam magnam mollitia natus odio perferendis perspiciatis, quod recusandae reiciendis rem
-            reprehenderit, rerum sunt tenetur!
-        </div>
-        <div>Ad, aliquam aliquid commodi culpa cum cumque error eveniet expedita harum illo iusto, laudantium, molestiae
-            natus nemo nihil perferendis quia sed soluta suscipit temporibus tenetur totam vel velit. Assumenda,
-            tenetur.
+    <div class="container">
+        <aside class="categories">
+            <div  class="categories-head">
+                    <div class="categories-head-title">Categories 33</div>
+                    <div class="categories-head-button">
+                        <button class="btn-main"><i class="fa fa-plus" aria-hidden="true"></i> Create</button>
+                    </div>
+            </div>
+            <div style="clear: both;"></div>
+            <div style="height:calc(100% - 70px);">
+                <div style="overflow: auto; height:calc(100% - 20px);">
+                    <ul class="cd-accordion-menu animated">
+                        <li class="has-children">
+                            <input type="checkbox" name ="group-1" id="group-1" checked>
+                            <label for="group-1">No category <span>12</span></label>
+                            <ul>
+                                <li><a href="#">n category</a></li>
+                                <li><a href="#">n category</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-children">
+                            <input type="checkbox" name="group-2" id="group-2">
+                            <label for="group-2">Basic <span>24</span></label>
+                            <ul>
+                                <li class="has-children">
+                                    <input type="checkbox" name="sub-group-1" id="sub-group-1">
+                                    <label for="sub-group-1">Sub Category </label>
+
+                                    <ul>
+                                        <li><a href="#">n category</a></li>
+                                        <li><a href="#">n category</a></li>
+                                        <li><a href="#">n category</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <input type="checkbox" name="sub-group-2" id="sub-group-2">
+                                    <label for="sub-group-2">Sub Category 2</label>
+                                    <ul>
+                                        <li class="has-children">
+                                            <input type="checkbox" name="sub-group-level-3" id="sub-group-level-3">
+                                            <label for="sub-group-level-3">Sub Category Level 3</label>
+                                            <ul>
+                                                <li><a href="#">n category level 3</a></li>
+                                                <li><a href="#">n category level 3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">n category level 2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">n category</a></li>
+                                <li><a href="#">n category</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="has-children">
+                            <input type="checkbox" name ="group-3" id="group-3">
+                            <label for="group-3">Category three <span>2</span></label>
+
+                            <ul>
+                                <li><a href="#">n category</a></li>
+                                <li><a href="#">n category</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-children">
+                            <input type="checkbox" name ="group-4" id="group-4">
+                            <label for="group-4">Send mail <span>9</span></label>
+
+                            <ul>
+                                <li class="has-children">
+                                    <input type="checkbox" name ="sub-group-3" id="sub-group-3">
+                                    <label for="sub-group-3">Sub Category 3</label>
+
+                                    <ul>
+                                        <li><a href="#">n category</a></li>
+                                        <li><a href="#">n category</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">n category</a></li>
+                                <li><a href="#">n category</a></li>
+                            </ul>
+                        </li>
+                    </ul> <!-- cd-accordion-menu -->
+                </div>
+            </div>
+        </aside>
+        <div class="tasks">
+            <div class="tasks-view">
+                <div class="search-box">
+                    <div class="input-group-btn">
+                        <input type="search" >
+                        <button class="search-caret"><i class="fa fa-caret-down"></i></button>
+                                <!--<div class="dropdown-menu">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label>Contains the words</label>
+                                            <input class="form-control" type="text">
+                                        </div>
+                                    </form>
+                                </div>-->
+                        <button class="btn-main btn-search"><i class="fa fa-search"></i></button>
+                        <div class="pull-right">
+                            <button class="btn-main"><i class="fa fa-plus"></i> Create</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tags-list-box" >
+                    <div class="tag"><span>Type:</span> lorem<a class="tag-delete-link"><i class="fa fa-times"></i></a></div>
+                    <div class="tag">lorem-2 <a class="tag-delete-link" href="#"><i class="fa fa-times"></i></a></div>
+                    <div class="tag">lorem-3 <a class="tag-delete-link" href="#"><i class="fa fa-times"></i></a></div>
+                    <div class="tag"><span>Sort by</span> lorem-4 <a class="tag-delete-link"><i class="fa fa-times"></i></a></div>
+                    <div class="tag">lorem-5 <a class="tag-delete-link" href="#"><i class="fa fa-times"></i></a></div>
+                    <div class="tag">lorem-6 <a class="tag-delete-link" href="#"><i class="fa fa-times"></i></a></div>
+                    <div class="tag">lorem-7 <a class="tag-delete-link" href="#"><i class="fa fa-times"></i></a></div>
+                    <div class="tag">test <a class="tag-delete-link" href="#"><i class="fa fa-times"></i></a></div>
+                    <div class="tags-count">Found test cases <b>4</b> from <b>6</b></div>
+                </div>
+                <div class="tests-list-box">
+                    <div class="tests-item">
+                        <span class="item-label priority-low">SMF-1</span>
+                        <span class="tests-item-title"><a href="#">Lorem ipsum dolor sit.</a></span>
+                        <div class="tests-item-category">Category: <a href="#">No category</a></div>
+                        <div class="tests-item-actions">
+                            <a href="#"><i class="fa fa-copy" title="some action" ></i></a>
+                            <a href="#"><i class="fa fa-link" title="some action" ></i></a>
+                            <a href="#"><i class="fa fa-trash" title="some action" ></i></a>
+                        </div>
+                    </div>
+                    <div class="tests-item active">
+                        <span class="item-label priority-normal">SMF-11</span>
+                        <span class="tests-item-title"><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></span>
+                        <div class="tests-item-category">Category: <a href="#">No category</a></div>
+                        <div class="tests-item-tags">Tags: <div class="tag">lorem-8</div> <div class="tag">lorem-9</div></div>
+                        <div class="tests-item-actions">
+                            <a href="#"><i class="fa fa-copy" title="some action"></i></a>
+                            <a href="#"><i class="fa fa-link" title="some action"></i></a>
+                            <a href="#"><i class="fa fa-trash" title="some action"></i></a>
+                        </div>
+                    </div>
+                    <div class="tests-item">
+                        <span class="item-label priority-high">SMF-121</span>
+                        <span class="tests-item-title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, natus, tempore.</a></span>
+                        <div class="tests-item-category">Category: <a href="#">No category</a></div>
+                        <div class="tests-item-tags">Tags: <div class="tag">lorem-8</div></div>
+                        <div class="tests-item-actions">
+                            <a href="#"><i class="fa fa-copy" title="some action"></i></a>
+                            <a href="#"><i class="fa fa-link" title="some action"></i></a>
+                            <a href="#"><i class="fa fa-trash" title="some action"></i></a>
+                        </div>
+                    </div>
+                    <div class="tests-item">
+                        <span class="item-label priority-normal">SMF-12</span>
+                        <span class="tests-item-title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, natus, tempore.</a></span>
+                        <div class="tests-item-category">Category: <a href="#">No category</a> > <a href="#">Sub category</a> > <a href="#">Lorem ipsum</a></div>
+                        <div class="tests-item-tags">Tags: <div class="tag">lorem-7</div> <div class="tag">lorem-8</div> <div class="tag">lorem-9</div></div>
+                        <div class="tests-item-actions">
+                            <a href="#"><i class="fa fa-copy" title="some action"></i></a>
+                            <a href="#"><i class="fa fa-link" title="some action"></i></a>
+                            <a href="#"><i class="fa fa-trash" title="some action"></i></a>
+                        </div>
+                    </div>
+                    <div class="tests-item">
+                        <span class="item-label priority-low">SMF-1</span>
+                        <span class="tests-item-title"><a href="#">Lorem ipsum dolor sit.</a></span>
+                        <div class="tests-item-category">Category: <a href="#">No category</a></div>
+                        <div class="tests-item-actions">
+                            <a href="#"><i class="fa fa-copy" title="some action"></i></a>
+                            <a href="#"><i class="fa fa-link" title="some action"></i></a>
+                            <a href="#"><i class="fa fa-trash" title="some action"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tasks-edit">
+                <div>
+                    <span class="item-label priority-normal">SMF-11</span>
+                    <span class="tasks-edit-title">Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur.</span>
+                    <div class="tasks-edit-form">
+                        <div class="form-row">
+                            <div class="form-label">Category:</div>
+                            <div class="form-content">no category</div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label">Tags:</div>
+                            <div class="form-content"><input type="text"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label">Created by:</div>
+                            <div class="form-content">Lorem ipsum dolor sit amet.</div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label">Last edit by:</div>
+                            <div class="form-content">Lorem ipsum dolor sit amet.</div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label">Type:</div>
+                            <div class="form-content">Lorem ipsum</div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label">Priority</div>
+                            <div class="form-content">
+                                <select name="" id="">
+                                    <option value="1">Normal</option>
+                                    <option value="2">High</option>
+                                    <option value="3">Low</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label">Execution:</div>
+                            <div class="form-content">Lorem ipsum</div>
+                        </div>
+                    </div>
+                    <div class="task-edit-desc">
+                        <div>
+                            <div class="desc-title">Description</div>
+                            <textarea name="" id="1" ></textarea>
+                        </div>
+                        <div>
+                            <div class="desc-title">Steps</div>
+                            <textarea name="" id="2"></textarea>
+                        </div>
+                        <div>
+                            <div class="desc-title">Expected results</div>
+                            <textarea name="" id="3" ></textarea>
+                        </div>
+                    </div>
+                    <div class="task-edit-buttons">
+                        <button class="btn-main"><i class="fa fa-copy fa-lg" aria-hidden="true"></i> Copy</button>
+                        <button class="btn-main"><i class="fa fa-link fa-lg" aria-hidden="true"></i> Link</button>
+                        <button class="btn-main"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> Delete</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
+
 </section>
 
 <section class="footer">
-    <div>Footer</div>
+    <div class="logo">
+        <a href="#"><img src="img/Logo-footer.png" alt=""></a>
+    </div>
+    <div class="copy-write">Lorem ipsum dolor. © 2015</div>
 </section>
+<script src="js/main.js"></script>
 </body>
 </html>
